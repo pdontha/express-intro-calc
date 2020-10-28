@@ -5,16 +5,16 @@ const { BadRequestError } = require("./expressError");
 function convertStrNums(strNums) {
   // if the conversion isn't successful, throw a BadRequestError and will
   // be handled in your route
-  try {
-      result = strNums.map(el=> {
-        let intEl = parseInt(el);
-        if (!intEl) throw new BadRequestError(`${el} is not a number`);
-        return intEl;
-      })
-      return result;
-  } catch(err){
-      return err;
-  }
+  // try {
+  result = strNums.map(el => {
+    let intEl = parseInt(el);
+    if (!intEl) throw new BadRequestError(`${el} is not a number`);
+    return intEl;
+  })
+  return result;
+  // } catch(err){
+  //     return err;
+  // }
 }
 
 
